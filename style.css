@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+header h1 {
+  text-align: center;
+}
+
+.book__container {
+  width: 600px;
+  height: 450px;
+  /* border: 1px solid black; */
+  margin: 0 auto;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.add-btn-div {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px 0;
+}
+
+.add-book-btn {
+  /* margin: 0 auto; */
+  /* padding: 5px 10px;
+  height: 30px; */
+  width: 120px;
+  font-size: 1.25rem;
+  /* text-align: left; */
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 1.25rem;
+  /* margin-top: 30px; */
+}
+
+table tr td {
+  border: 1px solid black;
+}
+
+thead tr td:first-child {
+  width: 50px;
+}
+
+.delete-btn {
+  background-color: red;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.dialog-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  background-color: #fff;
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: none;
+}
+
+.library-form ul li:not(.status) {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3rem;
+  text-align: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.library-form ul li:not(.status) input {
+  height: 40px;
+  font-size: 1.25rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.library-form ul li button {
+  font-size: 1.25rem;
+  height: 35px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  height: 50px;
+  gap: 20px;
+  justify-content: center;
+}
+
+#read {
+  /* height: 20px;
+  width: 20px; */
+  transform: scale(2);
+  /* outline: 1px solid red; */
+}
+
+.library tr {
+  height: 30px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
