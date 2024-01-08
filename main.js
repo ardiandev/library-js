@@ -56,7 +56,7 @@ function render() {
     <td>${author}</td>
     <td>${pages}</td>
     <td>${read ? "Read" : "Not Read"}</td>
-    <td><button>delete</button></td>  
+    <td><button class="delete-btn" >delete</button></td>  
     `;
 
     table.appendChild(card);
