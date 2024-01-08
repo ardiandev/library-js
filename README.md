@@ -6,4 +6,4 @@ This is a library project using HTML, CSS, and Vanilla Javascript. This is one o
 
 ## Demo
 
-Check out the [demo](#)
+Check out the [demo](https://ardiandev.github.io/library-js/)
