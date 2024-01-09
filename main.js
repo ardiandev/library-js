@@ -34,13 +34,18 @@ addBook.addEventListener("click", event => {
   event.preventDefault();
   addBookToLibrary();
 });
+
 function addBookToLibrary() {
-  let title = document.querySelector("#title").value;
+  let title = document.querySelector("#title");
   let author = document.querySelector("#author").value;
   let pages = document.querySelector("#pages").value;
   let read = document.querySelector("#read").checked;
 
-  let book = new Book(title, author, pages, read);
+  if (!title.value) {
+    return;
+  }
+
+  let book = new Book(title.value, author, pages, read);
   myLibrary.push(book);
   render();
 }
@@ -56,11 +61,33 @@ function render() {
     <td>${author}</td>
     <td>${pages}</td>
     <td>${read ? "Read" : "Not Read"}</td>
-    <td><button class="delete-btn" >delete</button></td>  
+    <td><button class="delete-btn" data-index="${index}" >delete</button></td>  
     `;
+
+    const deleteBtn = card.querySelector(".delete-btn");
+    deleteBtn.addEventListener("click", () => {
+      handleDelete(index);
+    });
 
     table.appendChild(card);
     inputBox.style.display = "none";
     checked = false;
   });
+}
+
+function handleDelete(index) {
+  console.log(index);
+
+  if (index === 0) {
+    table.innerHTML = "";
+    let card = document.createElement("tr");
+    card.innerHTML = `<td></td><td></td><td></td><td></td><td></td><td></td>`;
+    table.appendChild(card);
+    inputBox.style.display = "none";
+    checked = false;
+    myLibrary.splice(index, 1);
+  } else {
+    myLibrary.splice(index, 1);
+    render();
+  }
 }
