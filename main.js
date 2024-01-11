@@ -3,6 +3,7 @@ let checked = false;
 const table = document.querySelector(".library");
 const addBook = document.querySelector(".add-book-item");
 const inputBox = document.querySelector(".dialog-box");
+const cancelBtn = document.querySelector(".cancel-btn");
 
 const myLibrary = [];
 
@@ -17,7 +18,10 @@ addBtn.addEventListener("click", addBookbtn);
 
 function addBookbtn() {
   const allInput = document.querySelectorAll("form input");
-  allInput.forEach(input => (input.value = ""));
+  allInput.forEach(input => {
+    input.value = "";
+    input.checked = false;
+  });
 
   console.log(allInput);
 
@@ -77,17 +81,22 @@ function render() {
 
 function handleDelete(index) {
   console.log(index);
+  myLibrary.splice(index, 1);
+  render();
 
-  if (index === 0) {
-    table.innerHTML = "";
+  console.log(myLibrary.length === 0);
+
+  if (myLibrary.length === 0) {
     let card = document.createElement("tr");
     card.innerHTML = `<td></td><td></td><td></td><td></td><td></td><td></td>`;
     table.appendChild(card);
-    inputBox.style.display = "none";
-    checked = false;
-    myLibrary.splice(index, 1);
-  } else {
-    myLibrary.splice(index, 1);
-    render();
+    let read = document.querySelector("#read");
+    read.checked = false;
   }
 }
+
+cancelBtn.addEventListener("click", () => {
+  console.log("cancel");
+  inputBox.style.display = "none";
+  checked = false;
+});
