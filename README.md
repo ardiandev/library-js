@@ -1,9 +1,6 @@
 # Library Project
 
-# Library Book Management System
-
-This is a simple JavaScript-based library book management system that allows users to add, display, and delete books from their library. The application uses an HTML interface for user interaction and dynamic updates using JavaScript.
-This is a library project using HTML, CSS, and Vanilla Javascript. This is one of the Odin Project javascript project.
+This is a simple JavaScript-based library book management system that allows users to add, display, and delete books from their library. The application uses an HTML interface for user interaction and dynamic updates using JavaScript. This is a library project using HTML, CSS, and Vanilla Javascript. This is one of the Odin Project javascript project.
 
 ## Demo
 
