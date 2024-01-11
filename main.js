@@ -23,8 +23,6 @@ function addBookbtn() {
     input.checked = false;
   });
 
-  console.log(allInput);
-
   if (!checked) {
     inputBox.style.display = "block";
     checked = true;
@@ -80,7 +78,6 @@ function render() {
 }
 
 function handleDelete(index) {
-  console.log(index);
   myLibrary.splice(index, 1);
   render();
 
@@ -96,7 +93,6 @@ function handleDelete(index) {
 }
 
 cancelBtn.addEventListener("click", () => {
-  console.log("cancel");
   inputBox.style.display = "none";
   checked = false;
 });
